@@ -17,13 +17,14 @@ class GameListSpider(scrapy.Spider):
                 'item_url': item_url,
                 'name': name,
             }
-            # yield scrapy.Request(item_url, callback=self.parse_child, cb_kwargs=custom_data)
-            yield {
-                'img_url': img_url,
-                'item_url': item_url,
-                'name': name,
+            print(item_url)
+            yield scrapy.Request(item_url, callback=self.parse_child, meta=custom_data)
+            # yield {
+            #     'img_url': img_url,
+            #     'item_url': item_url,
+            #     'name': name,
                 # 'child_info': child_info
-            }
+            # }
         # r = re.match("https://dl.3dmgame.com/all_all_(\d+)_time/", response.url)
         # if r:
         #     next_page = int(r.group(1)) + 1
@@ -34,6 +35,7 @@ class GameListSpider(scrapy.Spider):
         images = response.css("div.large_box > ul > li img::attr(src)").getall()
         yield {
             "images": images,
+            'img_url': response.meta["img_url"],
+            'item_url': response.meta["item_url"],
+            'name': response.meta["name"],
         }
-        
-        
