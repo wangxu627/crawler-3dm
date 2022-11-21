@@ -62,9 +62,10 @@ ROBOTSTXT_OBEY = True
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'proj_3dm.pipelines.Proj3DmPipeline': 300,
-#}
+IMAGES_STORE = '/workspaces/crawler-3dm/proj_3dm/images'
+ITEM_PIPELINES = {
+   'proj_3dm.pipelines.ImgPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html

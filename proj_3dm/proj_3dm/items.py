@@ -8,5 +8,7 @@ import scrapy
 
 class Proj3DmItem(scrapy.Item):
     # define the fields for your item here like:
-    # name = scrapy.Field()
-    pass
+    images = scrapy.Field()
+    img_url = scrapy.Field()
+    item_url = scrapy.Field()
+    name = scrapy.Field()
