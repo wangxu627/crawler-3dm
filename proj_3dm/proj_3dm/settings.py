@@ -62,9 +62,9 @@ CONCURRENT_REQUESTS_PER_IP = 16
 
 # Configure item pipelines
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
-IMAGES_STORE = '/root/workfolder/crawler-3dm/proj_3dm/images'
+IMAGES_STORE = '/workspaces/crawler-3dm/proj_3dm/images'
 ITEM_PIPELINES = {
-   'proj_3dm.pipelines.ImgPipeline': 300,
+   'proj_3dm.pipelines.ImgPipeline': 0,
 }
 
 # Enable and configure the AutoThrottle extension (disabled by default)
