@@ -10,6 +10,4 @@ class Proj3DmItem(scrapy.Item):
     images = scrapy.Field()
     img_url = scrapy.Field()
     item_url = scrapy.Field()
-    score = scrapy.Field()
-    release_date = scrapy.Field()
     name = scrapy.Field()
