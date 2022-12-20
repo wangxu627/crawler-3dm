@@ -12,6 +12,7 @@ from itemadapter import ItemAdapter
 
 class Proj3DmPipeline:
     def process_item(self, item, spider):
+        print("fffffffffffffffffffffffff")
         return item
 
 
